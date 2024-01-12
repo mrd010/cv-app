@@ -1,6 +1,6 @@
 const defaultCV = {
   name: 'John Smith',
-  birthday: '1990 aug 25',
+  birthday: '1990-5-20',
   job: 'Software Engineer',
   objective:
     'To obtain a challenging and rewarding position as a software engineer in a reputable company.',
