@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import PersonalInfoRow from './PersonalInfoRow';
+import PersonalInfoRow from './RowContents/PersonalInfoRow';
 import SectionHeader from './SectionHeader';
 import defaultCV from '../data/defaultCV';
+import ContactInfo from './ContactInfo';
 
 const PersonalInfo = ({ name, job, onHeaderInfoEdit }) => {
   const initialInfo = { birthday: defaultCV.birthday, objective: defaultCV.objective };
@@ -37,6 +38,7 @@ const PersonalInfo = ({ name, job, onHeaderInfoEdit }) => {
           onValueEdit={handlePersonalInfoEdit}
           inputType="textarea"
         ></PersonalInfoRow>
+        <ContactInfo></ContactInfo>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import MaterialIcon from './MaterialIcon';
+import MaterialIcon from './Icons/MaterialIcon';
 
 const SectionHeader = ({ iconName, title }) => {
   return (

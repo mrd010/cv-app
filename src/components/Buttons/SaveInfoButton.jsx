@@ -1,6 +1,6 @@
-import MaterialIcon from './MaterialIcon';
+import MaterialIcon from '../Icons/MaterialIcon';
 
-const SaveInfoButton = ({ display, onSave }) => {
+const SaveInfoButton = ({ display = true, onSave }) => {
   return (
     <button
       type="button"

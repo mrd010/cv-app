@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import EditInfoButton from './EditInfoButton';
-import SaveInfoButton from './SaveInfoButton';
+import EditInfoButton from '../Buttons/EditInfoButton';
+import SaveInfoButton from '../Buttons/SaveInfoButton';
 
-const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text' }) => {
+const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text', children }) => {
   const [editing, setEditing] = useState(false);
   const [rowValue, setValue] = useState(value);
 
@@ -15,8 +15,7 @@ const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text' }) 
   };
 
   const handleSaveInfo = () => {
-    // console.log('eee');
-    onValueEdit(labelName, rowValue);
+    onValueEdit(labelName === undefined ? '' : labelName, rowValue);
     setEditing(false);
   };
 
@@ -37,14 +36,15 @@ const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text' }) 
   }
 
   return (
-    <div>
-      <label htmlFor={labelName}>{labelName.toUpperCase()}</label>
+    <div className="info-row">
+      {labelName !== undefined ? <label htmlFor={labelName}>{labelName + ':'}</label> : null}
       {input}
       <EditInfoButton onToggle={handleEditModeToggle}></EditInfoButton>
       <SaveInfoButton
         display={editing && rowValue !== value}
         onSave={handleSaveInfo}
       ></SaveInfoButton>
+      {children}
     </div>
   );
 };

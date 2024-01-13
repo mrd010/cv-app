@@ -3,6 +3,7 @@ import Header from './components/Header';
 import defaultCV from './data/defaultCV';
 import PersonalInfo from './components/PersonalInfo';
 import 'material-symbols/rounded.css';
+import GeneralSection from './components/GeneralSection';
 
 function App() {
   const [person, setPerson] = useState({ name: defaultCV.name, job: defaultCV.job });
@@ -21,6 +22,11 @@ function App() {
           job={person.job}
           onHeaderInfoEdit={handleHeaderChange}
         ></PersonalInfo>
+        <GeneralSection sectionName="skills"></GeneralSection>
+        <GeneralSection sectionName="education"></GeneralSection>
+        <GeneralSection sectionName="experience"></GeneralSection>
+        <GeneralSection sectionName="projects"></GeneralSection>
+        <GeneralSection sectionName="awards"></GeneralSection>
       </main>
     </>
   );
