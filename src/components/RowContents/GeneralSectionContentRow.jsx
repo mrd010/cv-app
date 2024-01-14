@@ -19,6 +19,10 @@ const GeneralSectionContentRow = ({
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(rowData);
 
+  if (editing && !isSelected) {
+    setEditing(false);
+  }
+
   const handleSkillChange = (value) => {
     setValue(value);
   };
@@ -54,7 +58,7 @@ const GeneralSectionContentRow = ({
     ></RemoveItemButton>
   );
 
-  const props = { ...value, isEditing: editing, onRowSelection: () => onRowSelection(rowData.id) };
+  const props = { ...value, isEditing: editing };
   let content = null;
   switch (rowType) {
     case 'skill':
