@@ -87,11 +87,8 @@ const GeneralSectionContentRow = ({
   }
 
   return (
-    <div
-      className={`info-row ${isSelected ? 'selected' : ''}`}
-      style={isSelected ? { backgroundColor: `gray` } : {}}
-    >
-      <div>{content}</div>
+    <div className={`info-row ${isSelected ? 'selected' : ''}`}>
+      <div className="row-content">{content}</div>
       {isSelected ? saveEditBtn : null}
       {isSelected ? removeBtn : null}
     </div>

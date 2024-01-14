@@ -28,17 +28,18 @@ const GeneralSection = ({ sectionName }) => {
       break;
   }
   return (
-    <div className={`general-section ${sectionName}`}>
+    <section className={`general-section ${sectionName}`}>
       <SectionHeader iconName={icon} title={sectionName}></SectionHeader>
       <GeneralSectionContent display={visible} sectionName={sectionName}></GeneralSectionContent>
       <button
+        className="show-hide-button"
         onClick={() => {
           setVisibility(!visible);
         }}
       >
         <MaterialIcon>{visible ? 'expand_less' : 'expand_more'}</MaterialIcon>
       </button>
-    </div>
+    </section>
   );
 };
 

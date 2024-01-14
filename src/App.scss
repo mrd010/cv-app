@@ -1,9 +1,13 @@
 // variables
 $slate50: #f8fafc;
+$slate100: #f1f5f9;
+$slate200: #e2e8f0;
 $sky500: #0ea5e9;
 $sky600: #0284c7;
+$sky400: #38bdf8;
 $slate950: #020617;
 $slate900: #0f172a;
+$slate800: #1e293b;
 body {
   background-color: $slate50;
   color: $slate950;
@@ -12,4 +16,268 @@ body {
 .header {
   background-color: $sky600;
   color: $slate50;
+  padding: 1rem;
+  text-align: center;
+  .header-job {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+%action-button {
+  transform: scale(0);
+  border-radius: 8px;
+  margin: 0.5rem;
+  border: none;
+  padding: 0.25rem;
+  background-color: $sky600;
+  box-shadow: 0 0 6px rgba($color: $slate900, $alpha: 0.3);
+  color: $slate200;
+
+  &:focus,
+  &:hover {
+    outline: 2px solid $sky400;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.personal {
+  .section-content {
+    display: grid;
+    .info-row {
+      label {
+        grid-column: 1 / 4;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 0.25rem;
+      }
+      input,
+      textarea {
+        grid-column: 1 / 4;
+        border-radius: 8px;
+        font-size: 1rem;
+        padding: 0.5rem;
+        border: none;
+        color: rgba($color: $slate800, $alpha: 0.8);
+        outline: 2px solid rgba($color: $sky600, $alpha: 0.75);
+        &:disabled {
+          border: none;
+          background-color: $slate200;
+          color: $slate900;
+          outline: none;
+          font-weight: 500;
+        }
+      }
+      button {
+        @extend %action-button;
+        grid-column: 3 / 4;
+        justify-self: end;
+
+        &.edit-button {
+          grid-column: 2 / 3;
+        }
+        &.save-button {
+          grid-column: 3 / 4;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  padding: 1rem;
+  display: grid;
+  gap: 2rem;
+  > section {
+    border: 2px solid rgba($color: $slate900, $alpha: 0.1);
+    border-radius: 10px;
+    .section-header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      .title {
+        font-size: 1.4rem;
+      }
+    }
+    .section-content {
+      padding: 1rem;
+      .info-row {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr 35px 35px;
+        &:hover,
+        &:focus {
+          button {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  .general-section {
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    .section-content {
+      &.hidden {
+        display: none;
+      }
+      .list {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+        .info-row {
+          border-radius: 8px;
+          overflow: hidden;
+          background-color: $slate200;
+          &.selected {
+            background-color: rgba($color: $sky600, $alpha: 0.2);
+            button {
+              transform: scale(1);
+            }
+          }
+          .row-content {
+            grid-column: 1 / 4;
+            grid-row: 1 / 3;
+            padding: 0.5rem;
+            .info-field {
+              display: grid;
+              gap: 0.2rem;
+            }
+
+            textarea,
+            input,
+            p,
+            span {
+              font-size: 0.9rem;
+              border: none;
+              outline: none;
+              border-radius: 5px;
+              width: 100%;
+              padding: 0.25rem;
+            }
+            label {
+              display: block;
+              font-weight: 600;
+              background-color: rgba($color: $slate100, $alpha: 0.5);
+              border-radius: 5px;
+              padding: 0 0.25rem;
+              justify-self: start;
+            }
+            textarea,
+            input {
+              color: rgba($color: $slate800, $alpha: 0.8);
+              font-weight: 300;
+            }
+            p,
+            span {
+              color: $slate900;
+              font-weight: 400;
+            }
+          }
+          button {
+            @extend %action-button;
+            justify-self: end;
+            grid-row: -2 / -1;
+            &.edit-button,
+            &.save-button {
+              grid-column: 2 / 3;
+            }
+            &.remove-button {
+              grid-column: 3 / 4;
+            }
+          }
+        }
+      }
+      .add-button {
+        @extend %action-button;
+        transform: scale(1);
+        width: 100%;
+        margin: 1rem 0;
+      }
+    }
+    .show-hide-button {
+      border: none;
+      background-color: rgba($color: $slate900, $alpha: 0.1);
+      span {
+        font-size: 1.2rem;
+        transform: scale(1.4);
+        color: $slate800;
+      }
+    }
+  }
+}
+
+.education {
+  .row-content > div {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+
+    .department {
+      grid-column: 1 / -1;
+    }
+    .start-date,
+    .end-date,
+    .gpa {
+      grid-template-columns: auto auto;
+      justify-content: start;
+    }
+    .start-date {
+      grid-column: 1 / 2;
+    }
+    .end-date {
+      grid-column: 2 / 3;
+    }
+    .gpa {
+      grid-column: 1 / 2;
+    }
+  }
+}
+.experience {
+  .row-content > div {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    .start-date,
+    .end-date {
+      grid-template-columns: auto auto;
+      justify-content: start;
+    }
+  }
+}
+.projects {
+  .row-content > div {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    .start-date,
+    .end-date {
+      grid-template-columns: auto auto;
+      justify-content: start;
+    }
+  }
+}
+.awards {
+  .row-content > div {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    .date-date {
+      grid-template-columns: auto auto;
+      justify-content: start;
+    }
+  }
 }

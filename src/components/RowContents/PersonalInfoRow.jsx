@@ -32,7 +32,7 @@ const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text', ch
   if (inputType !== 'textarea') {
     input = <input type={inputType} {...inputAttr} />;
   } else if (inputType === 'textarea') {
-    input = <textarea {...inputAttr} rows="5"></textarea>;
+    input = <textarea {...inputAttr} rows={6} maxLength={120}></textarea>;
   }
 
   return (
