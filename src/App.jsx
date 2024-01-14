@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import defaultCV from './data/defaultCV';
 import PersonalInfo from './components/PersonalInfo';
 import 'material-symbols/rounded.css';
 import GeneralSection from './components/GeneralSection';
+import './App.scss';
+import { capitalize } from './helpers/utils';
 
 function App() {
   const [person, setPerson] = useState({ name: defaultCV.name, job: defaultCV.job });
 
   const handleHeaderChange = (labelName, newValue) => {
     setPerson({ ...person, [labelName]: newValue });
-    console.log(person);
   };
+
+  document.title = `${capitalize(person.name)} Resume`;
 
   return (
     <>
