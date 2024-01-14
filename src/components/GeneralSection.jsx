@@ -4,7 +4,11 @@ import MaterialIcon from './Icons/MaterialIcon';
 import GeneralSectionContent from './SectionContents/GeneralSectionContent';
 
 const GeneralSection = ({ sectionName }) => {
-  const [visible, setVisibility] = useState(true);
+  const [visible, setVisibility] = useState(false);
+
+  const handleChangeVisibility = () => {
+    setVisibility(!visible);
+  };
 
   let icon;
   switch (sectionName) {
@@ -29,7 +33,11 @@ const GeneralSection = ({ sectionName }) => {
   }
   return (
     <section className={`general-section ${sectionName}`}>
-      <SectionHeader iconName={icon} title={sectionName}></SectionHeader>
+      <SectionHeader
+        iconName={icon}
+        title={sectionName}
+        onToggle={handleChangeVisibility}
+      ></SectionHeader>
       <GeneralSectionContent display={visible} sectionName={sectionName}></GeneralSectionContent>
       <button
         className="show-hide-button"

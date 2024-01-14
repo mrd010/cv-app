@@ -4,6 +4,7 @@ const SkillRowContent = ({ skill, isEditing, onSkillChange }) => {
   ) : (
     <p>{skill}</p>
   );
+
   return <>{content}</>;
 };
 

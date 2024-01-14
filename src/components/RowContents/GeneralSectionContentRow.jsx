@@ -21,6 +21,7 @@ const GeneralSectionContentRow = ({
 
   if (editing && !isSelected) {
     setEditing(false);
+    setValue({ ...rowData });
   }
 
   const handleSkillChange = (value) => {
