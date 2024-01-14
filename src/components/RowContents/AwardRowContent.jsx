@@ -1,4 +1,4 @@
-const AwardRowContent = ({ title, date, isEditing, onRowSelection, onAwardChange }) => {
+const AwardRowContent = ({ title, date, isEditing, onAwardChange }) => {
   let dep = isEditing ? (
     <input
       id="title"
@@ -15,7 +15,7 @@ const AwardRowContent = ({ title, date, isEditing, onRowSelection, onAwardChange
   );
 
   return (
-    <div onClick={onRowSelection}>
+    <div>
       <div className="info-field title">
         <label htmlFor="title">Title</label>
         {dep}

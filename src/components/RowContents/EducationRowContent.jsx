@@ -4,7 +4,7 @@ const EducationRowContent = ({
   end,
   gpa,
   isEditing,
-  onRowSelection,
+
   onEduChange,
 }) => {
   let dep = isEditing ? (
@@ -33,7 +33,7 @@ const EducationRowContent = ({
   );
 
   return (
-    <div onClick={onRowSelection}>
+    <div>
       <div className="info-field department">
         <label htmlFor="department">Department</label>
         {dep}

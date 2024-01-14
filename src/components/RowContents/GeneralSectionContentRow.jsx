@@ -87,10 +87,13 @@ const GeneralSectionContentRow = ({
   }
 
   return (
-    <div className={`info-row ${isSelected ? 'selected' : ''}`}>
+    <div
+      className={`info-row ${isSelected ? 'selected' : ''}`}
+      onClick={() => onRowSelection(rowData.id)}
+    >
       <div className="row-content">{content}</div>
-      {isSelected ? saveEditBtn : null}
-      {isSelected ? removeBtn : null}
+      {saveEditBtn}
+      {removeBtn}
     </div>
   );
 };

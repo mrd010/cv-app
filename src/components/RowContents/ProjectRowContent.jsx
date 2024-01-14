@@ -1,4 +1,4 @@
-const ProjectRowContent = ({ title, start, end, isEditing, onRowSelection, onPrjChange }) => {
+const ProjectRowContent = ({ title, start, end, isEditing, onPrjChange }) => {
   let tit = isEditing ? (
     <input id="title" value={title} onChange={(e) => onPrjChange('title', e.target.value)}></input>
   ) : (
@@ -16,7 +16,7 @@ const ProjectRowContent = ({ title, start, end, isEditing, onRowSelection, onPrj
   );
 
   return (
-    <div onClick={onRowSelection}>
+    <div>
       <div className="info-field title">
         <label htmlFor="title">Title</label>
         {tit}

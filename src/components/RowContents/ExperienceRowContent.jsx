@@ -1,4 +1,4 @@
-const ExperienceRowContent = ({ position, start, end, isEditing, onRowSelection, onExpChange }) => {
+const ExperienceRowContent = ({ position, start, end, isEditing, onExpChange }) => {
   let pos = isEditing ? (
     <input
       id="position"
@@ -20,7 +20,7 @@ const ExperienceRowContent = ({ position, start, end, isEditing, onRowSelection,
   );
 
   return (
-    <div onClick={onRowSelection}>
+    <div>
       <div className="info-field position">
         <label htmlFor="position">Position</label>
         {pos}
