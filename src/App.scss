@@ -49,6 +49,18 @@ body {
 .personal {
   .section-content {
     display: grid;
+    .contact-info {
+      background-color: rgba($color: $sky400, $alpha: 0.5);
+      padding: 0.4rem;
+      border: 2px solid $sky400;
+      border-radius: 8px;
+      .info-row {
+        input:disabled,
+        textarea:disabled {
+          background-color: $slate100;
+        }
+      }
+    }
     .info-row {
       label {
         grid-column: 1 / 4;

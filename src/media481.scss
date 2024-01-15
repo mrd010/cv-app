@@ -1,10 +1,33 @@
 // variables
 $slate50: #f8fafc;
+$slate100: #f1f5f9;
 $slate200: #e2e8f0;
 $sky500: #0ea5e9;
 $sky600: #0284c7;
+$sky400: #38bdf8;
 $slate950: #020617;
 $slate900: #0f172a;
+$slate800: #1e293b;
 
 @media screen and (min-width: 481px) {
+  .personal .section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .info-row {
+      grid-column: 1 / -1;
+    }
+    .info-row.birthday {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .info-row.name {
+      grid-column: 1 / 2;
+    }
+    .info-row.phone {
+      grid-column: 1 / 2;
+    }
+    .info-row.email {
+      grid-column: 2 / 3;
+    }
+  }
 }

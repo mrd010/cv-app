@@ -36,7 +36,7 @@ const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text', ch
   }
 
   return (
-    <div className="info-row">
+    <div className={`info-row ${labelName}`}>
       {labelName !== undefined ? <label htmlFor={labelName}>{labelName + ':'}</label> : null}
       {input}
       <EditInfoButton onToggle={handleEditModeToggle}></EditInfoButton>
