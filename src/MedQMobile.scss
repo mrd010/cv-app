@@ -1,0 +1,72 @@
+@media screen and (min-width: 481px) {
+  .personal .section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    .info-row {
+      grid-column: 1 / -1;
+    }
+    .info-row.birthday {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .info-row.name {
+      grid-column: 1 / 2;
+    }
+    .contact-info {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      .phone {
+        grid-column: 1 / 2;
+      }
+      .email {
+        grid-column: 2 / 3;
+      }
+    }
+  }
+
+  .main > section .section-content .info-row {
+    grid-template-columns: 1fr 50px 50px;
+  }
+
+  .main .general-section .section-content .add-button,
+  .main .general-section .section-content .list .info-row button,
+  .personal .section-content .info-row button {
+    margin: 0.7rem;
+    padding: 0.5rem;
+  }
+
+  .main .general-section .section-content .list .info-row .row-content {
+    padding: 0.8rem;
+  }
+
+  .education .row-content {
+    & > div {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+  }
+  .education .row-content > div .gpa {
+    grid-column: 3 / -1;
+  }
+
+  .experience .row-content > div {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .main .general-section .section-content .list .info-row .row-content .info-field.position {
+    grid-column: 1 / -1;
+  }
+
+  .projects .row-content > div {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .main .general-section .section-content .list .info-row .row-content .info-field.title {
+    grid-column: 1 / -1;
+  }
+}

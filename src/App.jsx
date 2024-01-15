@@ -5,9 +5,13 @@ import PersonalInfo from './components/PersonalInfo';
 import 'material-symbols/rounded.css';
 import GeneralSection from './components/GeneralSection';
 import './App.scss';
-import './media481.scss';
-import './media768.scss';
+import './MedQMobile.scss';
+import './MediaQTablet.scss';
+import './MediaQLaptop.scss';
 import { capitalize } from './helpers/utils';
+import getRowSize from './helpers/mediaQgetRow';
+
+getRowSize();
 
 function App() {
   const [person, setPerson] = useState({ name: defaultCV.name, job: defaultCV.job });

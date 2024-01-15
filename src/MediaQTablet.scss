@@ -1,0 +1,83 @@
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 1.6rem 3rem;
+    text-align: left;
+  }
+  .personal {
+    grid-column: 1 / -1;
+    .section-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0.75rem;
+      .info-row.job {
+        grid-column: 3 / -1;
+      }
+    }
+  }
+
+  .main .general-section .section-content {
+    &,
+    &.hidden {
+      display: grid;
+    }
+  }
+
+  .main .general-section .show-hide-button {
+    display: none;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .main .general-section .section-content .add-button {
+    width: auto;
+    border-radius: 50px;
+    justify-self: start;
+  }
+
+  .main > section .section-content .info-row {
+    grid-template-columns: 1fr 50px 50px;
+  }
+
+  .main .general-section .section-content .add-button,
+  .main .general-section .section-content .list .info-row button,
+  .personal .section-content .info-row button {
+    margin: 0.7rem;
+    padding: 0.5rem;
+  }
+
+  .main .general-section .section-content .list .info-row .row-content {
+    padding: 0.8rem;
+  }
+
+  .education .row-content {
+    & > div {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+  }
+  .education .row-content > div .gpa {
+    grid-column: 3 / -1;
+  }
+
+  .experience .row-content > div {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .main .general-section .section-content .list .info-row .row-content .info-field.position {
+    grid-column: 1 / -1;
+  }
+
+  .projects .row-content > div {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .main .general-section .section-content .list .info-row .row-content .info-field.title {
+    grid-column: 1 / -1;
+  }
+}

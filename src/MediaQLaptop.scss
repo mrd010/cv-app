@@ -1,0 +1,23 @@
+@media screen and (min-width: 1024px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .main {
+    position: relative;
+    display: block;
+  }
+  .main .personal {
+    position: fixed;
+    top: 8rem;
+    left: 0;
+    width: 50%;
+    border: none;
+  }
+
+  .main .general-section {
+    width: 50%;
+    margin: 1rem 1rem 1rem 50%;
+  }
+}

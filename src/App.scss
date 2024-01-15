@@ -8,6 +8,11 @@ $sky400: #38bdf8;
 $slate950: #020617;
 $slate900: #0f172a;
 $slate800: #1e293b;
+$skillsColor: #fee2e2;
+$eduColor: #e0e7ff;
+$expColor: #fce7f3;
+$prjColor: #d1fae5;
+$awardColor: #fef3c7;
 body {
   background-color: $slate50;
   color: $slate950;
@@ -114,6 +119,7 @@ body {
       align-items: center;
       gap: 0.5rem;
       padding: 1rem;
+      cursor: pointer;
       .title {
         font-size: 1.4rem;
       }
@@ -146,12 +152,16 @@ body {
         display: flex;
         flex-flow: column nowrap;
         gap: 1rem;
+        .empty-info {
+          text-align: center;
+          font-weight: normal;
+        }
         .info-row {
           border-radius: 8px;
           overflow: hidden;
-          background-color: $slate200;
+          background-color: $slate50;
           &.selected {
-            background-color: rgba($color: $sky600, $alpha: 0.2);
+            background-color: rgba($color: $slate800, $alpha: 0.1);
             button {
               transform: scale(1);
             }
@@ -229,6 +239,7 @@ body {
 }
 
 .education {
+  background-color: $eduColor;
   .row-content > div {
     display: grid;
     gap: 0.5rem;
@@ -256,6 +267,7 @@ body {
   }
 }
 .experience {
+  background-color: $expColor;
   .row-content > div {
     display: grid;
     gap: 0.5rem;
@@ -269,6 +281,7 @@ body {
   }
 }
 .projects {
+  background-color: $prjColor;
   .row-content > div {
     display: grid;
     gap: 0.5rem;
@@ -282,6 +295,7 @@ body {
   }
 }
 .awards {
+  background-color: $awardColor;
   .row-content > div {
     display: grid;
     gap: 0.5rem;
@@ -292,4 +306,7 @@ body {
       justify-content: start;
     }
   }
+}
+.skills {
+  background-color: $skillsColor;
 }

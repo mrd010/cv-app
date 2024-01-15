@@ -35,3 +35,11 @@ button[class*='-button'] {
       'opsz' 50;
   }
 }
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}

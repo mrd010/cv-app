@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import EditInfoButton from '../Buttons/EditInfoButton';
 import SaveInfoButton from '../Buttons/SaveInfoButton';
+import getRowSize from '../../helpers/mediaQgetRow';
 
 const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text', children }) => {
   const [editing, setEditing] = useState(false);
   const [rowValue, setValue] = useState(value);
+
+  const rowSize = getRowSize();
 
   const handleEditModeToggle = () => {
     setEditing(!editing);
@@ -32,7 +35,7 @@ const PersonalInfoRow = ({ labelName, value, onValueEdit, inputType = 'text', ch
   if (inputType !== 'textarea') {
     input = <input type={inputType} {...inputAttr} />;
   } else if (inputType === 'textarea') {
-    input = <textarea {...inputAttr} rows={6} maxLength={120}></textarea>;
+    input = <textarea {...inputAttr} rows={rowSize} maxLength={120}></textarea>;
   }
 
   return (
