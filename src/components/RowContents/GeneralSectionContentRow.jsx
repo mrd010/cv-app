@@ -23,9 +23,11 @@ const GeneralSectionContentRow = ({
     setEditing(false);
     setValue({ ...rowData });
   }
-
-  const handleSkillChange = (value) => {
-    setValue(value);
+  if (rowType === 'skill') {
+    console.log(value);
+  }
+  const handleSkillChange = (newValue) => {
+    setValue({ ...value, skill: newValue });
   };
   const handleEducationChange = (key, newValue) => {
     setValue({ ...value, [key]: newValue });
